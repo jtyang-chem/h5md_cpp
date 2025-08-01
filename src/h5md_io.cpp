@@ -116,7 +116,7 @@ void H5MDWriter::append_one_step(
         DataSpace species_space(1, species_dims);
         plist.setChunk(1, chunk_dims);
         plist.setDeflate(6);
-        DataSet species_dataset = position_group.createDataSet("species", PredType::NATIVE_INT, species_space, plist);
+        DataSet species_dataset = beads_group.createDataSet("species", PredType::NATIVE_INT, species_space, plist);
         species_dataset.write(species.data(), PredType::NATIVE_INT);
 
         // Create step dataset
